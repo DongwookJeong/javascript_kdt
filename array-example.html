@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">good day</h1>
+    <script>
+      const title = document.getElementById("title");
+      const arr = ["가나다", "라마바", "사아자", "차카타", "파하"];
+
+      let count = 0;
+      let timer = setInterval(() => {
+        if (count < arr.length) {
+          title.textContent = arr[count];
+          count++;
+        } else {
+          count = 0;
+        }
+      }, 1000);
+
+      title.addEventListener("click", () => {
+        clearInterval(timer);
+        title.textContent = "end";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <script>
+      let studentList = [
+        "가",
+        "나",
+        "다",
+        "라",
+        "마",
+        "바",
+        "사",
+        "아",
+        "자",
+        "차",
+        "카",
+        "타",
+        "파",
+        "하",
+      ];
+      const liItems = document.getElementById("root").children[0].children;
+      if (liItems.length === studentList.length) {
+        let lengthValue = studentList.length;
+        for (let i = 0; i < lengthValue; i++) {
+          liItems[i].textContent = studentList[i];
+          liItems[i].style.width = "300px";
+          liItems[i].style.height = "30px";
+          liItems[i].style.border = "1px soild gray";
+          liItems[i].style.textAlign = "center";
+        }
+      } else {
+        console.log("정리해");
+      }
+      const container = document.querySelector("#root > ul");
+      console.log(container);
+      container.addEventListener("click", function (event) {
+        console.log(event);
+        event.target.style.backgroundColor = "#333";
+        event.target.style.color = "#111";
+      });
+    </script>
+  </body>
+</html>

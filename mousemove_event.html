@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #root {
+        width: 100vw;
+        height: 100vh;
+        background-color: #444;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #root > h1 {
+        color: #454;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h1 id="x-position">hello</h1>
+      <h1 id="y-position">bye</h1>
+    </div>
+    <script>
+      const xPosition = document.getElementById("x-position");
+      const yPosition = document.getElementById("y-position");
+      console.log(xPosition, yPosition);
+      window.addEventListener("mousemove", function (event) {
+        console.log(event.offsetX);
+        console.log(event.offsetY);
+        xPosition.textContent = event.offsetX;
+        yPosition.textContent = event.offsetY;
+      });
+    </script>
+  </body>
+</html>
