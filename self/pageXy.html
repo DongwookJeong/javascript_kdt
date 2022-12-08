@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌표 값 구하기 예제</title>
+    <style>
+        body {
+            height: 300vh;
+        }
+
+        .items {
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: lightsteelblue;
+            width : 260px;
+        }
+
+        .item {
+            width : 250px;
+            height:250px;
+            background-color : lightgoldenrodyellow;
+            margin : 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <!-- Chapter : 좌표 [브라우저 기준 / 현재 화면 기준]-->
+    <script>
+        let browserPoint = (event)=>{
+            console.log(`브라우저 좌표 : (${event.pageX}, ${event.pageY})`);
+          }
+          // let clientPoint = (event) =>{
+            //     console.log(`화면 좌표 : (${event.clientX}, ${event.clientY})`);
+            // }
+            window.addEventListener('click',e=>{
+              browserPoint(e);
+              // clientPoint(e);
+              
+            });
+            
+    </script>
+</body>
+</html>
